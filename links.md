@@ -8,3 +8,8 @@ Some necessary stuff:
 
     Sites:
     http://pythontutor.com
+
+
+Interesting:
+
+https://habr.com/ru/post/446488/
