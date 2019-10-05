@@ -1,5 +1,7 @@
-Be attentive!!!
+# Studies
+This repository contains intermediate explanation code sketches designed to provide a brief introduction to real production-ready projects.
 
-This repo contains only complete python projects. All intermediate explanation code sketches you can find at:
+### All complete python projects you can find at:
 
-https://notebooks.azure.com/fgm-public/projects/studies
+- [https://github.com/fgm-public/Python](https://github.com/fgm-public/Python)
+- [https://github.com/fgm-public/AWS](https://github.com/fgm-public/AWS)
