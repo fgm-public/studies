@@ -11,7 +11,7 @@ namespace SimpleTcpServer
         {
             // Выбираем произвольный номер TCP порта для нашего сервера
             // На этот порт сервер будет принимать подключения (слушать порт)
-            int tcpPort = 12002;
+            int tcpPort = 12003;
             // Создаём объект сетевого TCP слушателя
             // Слушатель ожидает клиентских подключений на связанном интерфейсе и порту 
             TcpListener tcpListener = new TcpListener(IPAddress.Any, tcpPort);
@@ -21,15 +21,15 @@ namespace SimpleTcpServer
 
             // Просто выводим сообщение о запуске сервера в консоль сервера
             Console.WriteLine("The server is ready to receive messages");
-          
+
             //Наш сервер запущен, и принимает подклчения, определяем логику работы сервера
             //Запускаем бесконечный цикл
             while (true)
             {
                 // В момент подключения клиента получаем объект сокета
-                TcpClient client = tcpListener.AcceptTcpClient();
+                TcpClient tcpSocket = tcpListener.AcceptTcpClient();
                 // Получаем объект сетевого потока
-                NetworkStream netStream = client.GetStream();
+                NetworkStream netStream = tcpSocket.GetStream();
                 // Готовим место для принятия сообщения
                 byte[] byte_sentence = new byte[1024];
                 // Читаем сообщение от клиента
@@ -45,7 +45,7 @@ namespace SimpleTcpServer
                 // Выводим на экран полученное сообщение в виде строки
                 Console.Write(Encoding.Default.GetString(response_sentence, 0, count));
                 // Запрашиваем у ОС закрытие сокета
-                client.Close();
+                tcpSocket.Close();
             }
         }
     }
